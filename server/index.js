@@ -4,6 +4,8 @@ const express = require('express'),
       morgan = require('morgan'),
       bodyParser = require('body-parser');
 
+app.use(morgan('dev'));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'public')))
 
 app.get('/', (req, res, next)=> {
